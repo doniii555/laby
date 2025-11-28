@@ -1,22 +1,7 @@
 import numpy as np
 
 def solve_dufort_frankel(L, T, N, M, a_squared, initial_condition, boundary_condition_L, boundary_condition_R):
-    """
-    Решает одномерное уравнение теплопроводности u_t = a^2 * u_xx 
-    с использованием абсолютно устойчивой схемы Дюфорта-Франкля (схема ромб)[cite: 41].
-
-    Схема: (u_i^(j+1) - u_i^(j-1)) / (2*tau) = (u_{i+1}^j - (u_i^(j+1) + u_i^(j-1)) + u_{i-1}^j) / h^2 [cite: 42]
-
-    :param L: Область по x (от 0 до L).
-    :param T: Время счета (от 0 до T).
-    :param N: Количество интервалов по x (N+1 узлов).
-    :param M: Количество слоев по t (M+1 слоев).
-    :param a_squared: Коэффициент теплопроводности (a^2).
-    :param initial_condition: Функция для начального условия u(x, 0).
-    :param boundary_condition_L: Функция для краевого условия u(0, t).
-    :param boundary_condition_R: Функция для краевого условия u(L, t).
-    :return: Матрица решений u[j][i], где j - слой по времени, i - узел по пространству.
-    """
+   
     
     h = L / N            # Шаг по пространству
     tau = T / M          # Шаг по времени
